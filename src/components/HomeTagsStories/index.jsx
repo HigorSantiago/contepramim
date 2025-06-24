@@ -7,19 +7,19 @@ export default function HomeTagsStories() {
         {id: 3, title: "Tempos de Escola", description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus labore animi, incidunt a voluptatum obcaecati pariatur voluptates qui quam possimus quibusdam odit necessitatibus saepe autem blanditiis dolor. Eum, earum temporibus?", color: "green"},
     ]
     return (
-        <section class="historys">
-            <h1 class="montserrat-semibold">Aqui, cada história encontra seu lugar e sua voz.</h1>
-            <ul class="history-list">
+        <section className="historys">
+            <h1 className="montserrat-semibold">Aqui, cada história encontra seu lugar e sua voz.</h1>
+            <ul className="history-list">
                 {tags.map(tag => (
-                    <li key={tag.id} class="history-item">
+                    <li key={tag.id} className="history-item">
                         <img src="/img/icons/heart.svg" alt="" />
-                        <div class="history-text">
-                            <h2 class={`montserrat-semibold ${tag.color}`}>{tag.title}</h2>
-                            <p class="montserrat-medium">{tag.description}</p>
+                        <div className="history-text">
+                            <h2 className={`montserrat-semibold ${tag.color}`}>{tag.title}</h2>
+                            <p className="montserrat-medium">{tag.description}</p>
                         </div>
-                        <a href="" class={`ver-mais ${tag.color} montserrat-medium`}>
+                        <a href="/" className={`ver-mais ${tag.color} montserrat-medium`}>
                             Clique para ver mais
-                            <img src="" alt="" />
+                            
                         </a>
                     </li>
                 ))}
