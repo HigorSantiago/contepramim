@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import Logo from "../assets/img/logo.svg"
+import Logo from "../../assets/img/logo.svg"
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 
