@@ -1,0 +1,55 @@
+.historys {
+    background-color: #1E1E1E;
+    padding: 100px 64px;
+    color: white;
+    display: grid;
+    gap: 64px;
+}
+
+.historys h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.historys .history-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.historys .history-item {
+    padding: 32px 24px;
+    background-color: white;
+    border-radius: 12px;
+    display: grid;
+    place-content: space-between;
+    height: 200px;
+}
+
+.historys .history-item:hover {
+    transform: scale(1.05);
+    transition: 500ms;
+}
+
+
+.historys .history-text {
+    display: grid;
+    gap: 10px;
+}
+
+
+.historys .history-text h2 {
+    font-size: 18px;
+}
+
+.historys .history-text p {
+    font-size: 13px;
+    color: #77859F;
+}
+
+
+.historys .ver-mais {
+    font-size: 14px;
+    display: flex;
+    gap: 4px;
+}
