@@ -18,8 +18,7 @@ export default function HomeTagsStories() {
                             <p className="montserrat-medium">{tag.description}</p>
                         </div>
                         <a href="/" className={`ver-mais ${tag.color} montserrat-medium`}>
-                            Clique para ver mais
-                            
+                            Clique para ver mais                    
                         </a>
                     </li>
                 ))}
