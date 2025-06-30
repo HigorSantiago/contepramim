@@ -11,6 +11,7 @@
     --gray-text: #8E97A8;
     --gray-text-placeholder: #9E9DC4;
     --black-text: #3B3A49;
+    
 }
 
 
@@ -156,3 +157,5 @@ a {
     padding: 12px 12px;
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+
