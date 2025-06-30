@@ -1,0 +1,166 @@
+body {
+    background-color: #206EFF;
+    /* background: url("../../assets/img/new-history.svg") no-repeat center right fixed; */
+}
+
+textarea {
+    width: 100%;
+    min-height: 50px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    /* Remove o redimensionamento manual */
+    overflow: hidden;
+    /* Evita barras de rolagem */
+}
+
+
+.main-section {
+    display: grid;
+    gap: 64px;
+}
+
+
+.main-subtitle {
+    font-size: 14px;
+}
+
+
+.main-section-text {
+    display: grid;
+    gap: 64px;
+}
+
+.main-input {
+    background-color: var(--blue-500);
+    padding: 12px;
+    padding-left: 0px;
+    border: 0px;
+    border-bottom: 1px solid var(--branco);
+    width: 650px;
+    color: white;
+    font-size: 14px;
+}
+
+.main-input::placeholder {
+    color: var(--blue-placeholder);
+}
+
+.main-input:focus {
+    font-size: 16px;
+    transition: 200ms;
+    outline: none;
+}
+
+.main-section-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.button-primary {
+    background-color: var(--blue-500);
+    border: 0px;
+    border-radius: 400px;
+}
+
+.button-primary-content a {
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    padding: 0.50rem 0.5rem;
+    gap: 6px;
+}
+
+.button-primary-white {
+    background-color: white;
+    border: 0px;
+    border-radius: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-primary-content-white a {
+    color: var(--blue-500);
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 6px;
+}
+
+.button-primary-white-outline {
+    border: 1px solid white;
+    border-radius: 400px;
+    background-color: #206EFF;
+    display: flex;
+    justify-content: center;
+}
+
+.button-primary-content-white-outline a {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 6px;
+
+}
+
+.button-secundary-outline {
+    color: var(--branco);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 400px;
+    padding: 12px 12px;
+}
+
+.button-secundary {
+    color: var(--branco);
+    border-radius: 400px;
+    padding: 12px 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nunito-regular {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#formulario {
+    display: grid;
+    gap: 64px;
+}
+
+#formulario .buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#formulario button {
+    border: 0px;
+    padding: 22px 22px;
+    font-size: 14px;
+    border-radius: 399px;
+}
+
+
+#formulario .button-fill:disabled {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(39, 90, 184, 0.8);
+    font-weight: 700;
+}
+
+#formulario .button-fill:enabled {
+    background-color: white;
+    color: var(--blue-500);
+    font-weight: 700;
+}
+
+
+
+#formulario .button-outline {
+    background-color: var(--blue-500);
+    border: 1px solid white;
+    color: white;
+}
