@@ -12,7 +12,6 @@ export default function AddStoryPage() {
 
     const handleTagConfirm = (tags) => {
         setSelectedTags(tags);
-
     }
 
     return (

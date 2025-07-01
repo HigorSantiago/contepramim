@@ -20,10 +20,10 @@ export default function Navbar() {
             <button className="button-primary">
                 <div className="button-primary-content">
                     <Link id="btn-new-history" className="montserrat-semibold" to="/add-story">
-                        Conte uma história <IoIosAddCircleOutline size={24} />
+                        <IoIosAddCircleOutline size={24} /> Conte uma história
                     </Link>
                 </div>
             </button>
-    </header>
+        </header>
     )
 }

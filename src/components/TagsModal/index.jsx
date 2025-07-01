@@ -10,7 +10,7 @@ const TagsModal = ({ onConfirm, onClose }) => {
         { id: 2, title: "Cotidano", color: "green" },
         { id: 3, title: "Amor", color: "red" },
         { id: 4, title: "Amizade", color: "cyan" },
-        { id: 5, title: "Amor", color: "red" }
+        { id: 5, title: "Tempo", color: "red" }
 
     ]
 
