@@ -1,0 +1,10 @@
+.story-content{
+    display: flex;
+    gap: 52px;
+    padding: 64px;
+}
+
+body{
+    background-color: #FAFAFA;
+}
+

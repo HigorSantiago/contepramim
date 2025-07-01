@@ -57,3 +57,14 @@
     color: #FF448C;
     background-color: #FFE9ED;
 }
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* outros estilos existentes */
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* opcional: dá profundidade */
+  cursor: pointer;
+}

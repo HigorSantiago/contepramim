@@ -1,15 +1,22 @@
 import { useState } from "react";
 import TitleStorySection from "../components/TitleStorySection";
 import ContentStorySection from "../components/ContentStorySection";
+import TagsModal from "../components/TagsModal";
 
 export default function AddStoryPage() {
     const [step, setStep] = useState(1);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [selectedTags, setSelectedTags] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
+    const handleTagConfirm = (tags) => {
+        setSelectedTags(tags);
+
+    }
+
     return (
-        <div class="add-story-page">
+        <div className="add-story-page">
             {step === 1 && (
                 <TitleStorySection
                     title={title}
@@ -24,6 +31,14 @@ export default function AddStoryPage() {
                     setTitle={setTitle}
                     content={content}
                     setContent={setContent}
+                    setShowModal={setShowModal}
+                />
+            )}
+
+            {showModal && (
+                <TagsModal
+                    onConfirm={handleTagConfirm}
+                    onClose={() => setShowModal(false)}
                 />
             )}
         </div>
