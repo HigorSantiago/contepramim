@@ -9,23 +9,23 @@ export default function AddStoryPage() {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <>
-        {step === 1 && (
-            <TitleStorySection 
-                title={title} 
-                setTitle={setTitle} 
-                nextStep={() => setStep(2)} 
-            />
-        )}
+        <div class="add-story-page">
+            {step === 1 && (
+                <TitleStorySection
+                    title={title}
+                    setTitle={setTitle}
+                    nextStep={() => setStep(2)}
+                />
+            )}
 
-        {step == 2 && (
-            <ContentStorySection
-                title={title}
-                setTitle={setTitle}
-                content={content}
-                setContent={setContent}
-            />
-        )}
-        </>
+            {step == 2 && (
+                <ContentStorySection
+                    title={title}
+                    setTitle={setTitle}
+                    content={content}
+                    setContent={setContent}
+                />
+            )}
+        </div>
     )
 }

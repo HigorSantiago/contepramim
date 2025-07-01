@@ -1,5 +1,5 @@
-main {
-    margin: 52px 72px;
+.add-story-page {
+    padding: 52px 72px;
     display: flex;
     height: 100vh;
     gap: 48px;
