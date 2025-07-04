@@ -5,6 +5,20 @@
     gap: 48px;
 }
 
+textarea {
+    width: 100%;
+    min-height: 50px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    /* Remove o redimensionamento manual */
+    overflow: hidden;
+    /* Evita barras de rolagem */
+}
+
 
 main .content-text {
     height: 100%;

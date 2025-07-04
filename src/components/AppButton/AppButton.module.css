@@ -1,0 +1,37 @@
+.button {
+    border: 0;
+    border-radius: 400px;
+    border-radius: 400px;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: var(--blue-500);
+    color: var(--white);
+}
+
+.secondary {
+    background-color: var(--white);
+    color: var(--blue-500);
+    font-weight: bold;
+}
+
+
+.outline {
+    border: 1px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+}
+
+.medium {
+    padding: 10px 12px;
+}
+
+.large {
+    padding: 18px 24px;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

@@ -3,17 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 
 :root {
-    --branco: #EFEEEE;
+    --white: #EFEEEE;
     --texto-menu: #5B6474;
     --blue-500: #206EFF;
     --blue-placeholder: #D1E1FF;
-    --branco-50: rgba(255, 255, 255, 0.5);
+    --white-50: rgba(255, 255, 255, 0.5);
     --gray-text: #8E97A8;
     --gray-text-placeholder: #9E9DC4;
     --black-text: #3B3A49;
-    
 }
 
+* {
+    box-sizing: border-box;
+}
 
 input[type="text"]:focus {
     outline: none;
@@ -56,7 +58,7 @@ a {
 }
 
 .white {
-    color: var(--branco);
+    color: var(--white);
 }
 
 .blue {
@@ -104,7 +106,7 @@ a {
 }
 
 .button-primary-content a {
-    color: var(--branco);
+    color: var(--white);
     display: flex;
     align-items: center;
     padding: 0.50rem 0.5rem;
@@ -145,17 +147,15 @@ a {
 }
 
 .button-secundary-outline {
-    color: var(--branco);
+    color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 400px;
     padding: 12px 12px;
 }
 
 .button-secundary {
-    color: var(--branco);
+    color: var(--white);
     border-radius: 400px;
     padding: 12px 12px;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
-

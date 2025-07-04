@@ -1,4 +1,4 @@
-import "./ContentStorySection.css";
+import "./ContentStorySection.module.css";
 
 export default function TitleStorySection({
     title, setTitle, content, setContent, setShowModal

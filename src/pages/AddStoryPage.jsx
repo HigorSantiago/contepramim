@@ -22,7 +22,6 @@ export default function AddStoryPage() {
     }
 
     const handleSaveStory = async (tagsParam) => {
-        console.log(tagsParam, selectedTags)
         try {
             const storyData = {
                 title,
@@ -49,7 +48,7 @@ export default function AddStoryPage() {
     }
 
     return (
-        <div className="add-story-page">
+        <>
             {step === 1 && (
                 <TitleStorySection
                     title={title}
@@ -74,6 +73,6 @@ export default function AddStoryPage() {
                     onClose={() => setShowModal(false)}
                 />
             )}
-        </div>
+        </>
     )
 }
