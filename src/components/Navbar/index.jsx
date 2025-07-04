@@ -2,6 +2,7 @@ import "./Navbar.css"
 import Logo from "../../assets/img/logo.svg"
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
+import AppButton from "../AppButton";
 
 export default function Navbar() {
     return (
@@ -17,13 +18,9 @@ export default function Navbar() {
                 </nav>
             </div>
 
-            <button className="button-primary">
-                <div className="button-primary-content">
-                    <Link id="btn-new-history" className="montserrat-semibold" to="/add-story">
-                        <IoIosAddCircleOutline size={24} /> Conte uma história
-                    </Link>
-                </div>
-            </button>
+            <AppButton to="/add-story" variant="primary" className="montserrant-regular">
+                <IoIosAddCircleOutline size={24} /> Conte uma História
+            </AppButton>
         </header>
     )
 }

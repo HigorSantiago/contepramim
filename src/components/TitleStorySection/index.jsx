@@ -1,5 +1,5 @@
 import styles from "./TitleStorySection.module.css";
-import newHistoryImg from "../../assets/img/new-history.svg";
+import newHistoryImg from "../../assets/img/new-history2.svg";
 import AppButton from "../AppButton";
 
 export default function TitleStorySection({ title, setTitle, nextStep }) {
@@ -16,13 +16,12 @@ export default function TitleStorySection({ title, setTitle, nextStep }) {
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                 />
-                <div className={`${styles.buttons} nunito-regular`}>
+                <div className={`${styles.buttons}`}>
                     <AppButton
                         variant="secondary"
                         size="large"
                         onClick={nextStep}
                         disabled={!title.trim()}
-                        className="nunito-regular"
                     >
                         Quero que seja este título!
                     </AppButton>
