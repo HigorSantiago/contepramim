@@ -1,18 +1,38 @@
 import "./TagsModal.css";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { db } from "../../db/Firebase";
+import { onValue, ref } from "firebase/database";
 
-const TagsModal = ({ onConfirm, onClose }) => {
-    const [selectedTags, setSelectedTags] = useState([]);
+export default function TagsModal({ onConfirm, onClose }) {
+    const [tags, setTags] = useState([])
+    const [selectedTags, setSelectedTags] = useState([])
 
-    const tags = [
-        { id: 1, title: "Emocionante", color: "blue" },
-        { id: 2, title: "Cotidano", color: "green" },
-        { id: 3, title: "Amor", color: "red" },
-        { id: 4, title: "Amizade", color: "cyan" },
-        { id: 5, title: "Tempo", color: "red" }
+    useEffect(() => {
+        const tagsRef = ref(db, 'tags');
 
-    ]
+        const unsubscribe = onValue(tagsRef, (snapshot) => {
+            try {
+                const data = snapshot.val();
+                let comentariosArray = []
+
+                if (data) {
+                    comentariosArray = Object.keys(data).map(key => ({
+                        id: key,
+                        ...data[key]
+                    }))
+                }
+                setTags(comentariosArray)
+
+            } catch (err) {
+                console.error('Erro ao carregar tags', err)
+            }
+        }, dbError => {
+            console.error('Erro ao carregar tags', dbError);
+        })
+
+        return () => unsubscribe()
+    }, [])
 
     const toggleTag = (tag) => {
         if (selectedTags.find(t => t.id === tag.id)) {
@@ -20,7 +40,7 @@ const TagsModal = ({ onConfirm, onClose }) => {
         } else {
             setSelectedTags([...selectedTags, tag]);
         }
-    };
+    }
 
     const handleConfirm = () => {
         onConfirm(selectedTags);
@@ -49,7 +69,5 @@ const TagsModal = ({ onConfirm, onClose }) => {
                 </div>
             </div>
         </div>
-    );
-};
-
-export default TagsModal;
+    )
+}
