@@ -1,117 +1,101 @@
-.add-story-page {
-    padding: 52px 72px;
+.container {
+    background: #206EFF;
+    padding: 64px 76px 0 76px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: 95vh;
+}
+
+.formSection {
     display: flex;
-    height: 100vh;
-    gap: 48px;
-}
-
-textarea {
-    width: 100%;
-    min-height: 50px;
-    font-size: 16px;
-    line-height: 1.5;
-    border: 0px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    resize: vertical;
-    /* Remove o redimensionamento manual */
-    overflow: hidden;
-    /* Evita barras de rolagem */
-}
-
-
-main .content-text {
-    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: white;
-    border-radius: 12px 12px 0px 0px;
-    width: 700px;
+    flex-direction: column;
+    gap: 12px;
+    border: none;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     padding: 32px;
 }
 
-main .section-text {
-    display: grid;
-    background-color: white;
-    border-radius: 12px 12px 0px 0px;
-    grid-template-rows: auto auto auto;
-    align-self: start;
-    gap: 12px;
+.input {
+    border: none;
+    color: #206eff;
     width: 100%;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-.section-text-title {
+.input::placeholder {
+    color: #b3c6ff;
+    opacity: 1;
+}
+
+.textarea {
+    background-color: #fff;
+    border: none;
+    color: #222;
+    font-size: 1.1rem;
     width: 100%;
+    height: 100%;
+    min-height: 260px;
+    resize: vertical;
 }
 
-
-main .section-text-title .title-description {
-    color: var(--gray-text);
-    font-size: 12px;
+.textarea::placeholder {
+    color: #b3c6ff;
+    opacity: 1;
 }
 
-main .section-text-title .title {
-    color: var(--blue-500);
-    font-size: 1rem;
-    border: 0px;
-    width: 100%;
-}
-
-main .section-text .text {
-    font-size: 1rem;
-    color: #626183;
-}
-
-
-main .section-text .text::placeholder {
-    color: var(--gray-text-placeholder);
-
-}
-
-main .section-tips {
-    display: grid;
-    margin-top: 42px;
-    color: white;
-    align-self: start;
-    gap: 172px;
-}
-
-
-main .section-tips .tips-text .text p {
-    font-size: 14px;
-}
-
-main .section-tips .tips-text .text h1 {
-    font-size: 36px;
-}
-
-
-main .section-tips .tips-text {
-    display: grid;
-    gap: 48px;
-}
-
-
-main .tips-list {
-    display: grid;
-    margin: 1rem;
-    gap: 16px;
-    font-weight: 500;
-
-
-}
-
-main .tips-list li {
+.buttons {
     display: flex;
-    gap: 8px;
-    font-size: 14px;
-}
-
-main .tips-list p {
-    font-size: 16px;
-}
-
-.section-tips .buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    width: 600px;
+    margin-bottom: 40px;
+}
+
+.tipsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    color: #fff;
+    padding-left: 40px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-family: "Nunito", serif;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.tipsSubtitle {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    font-family: "Nunito", serif;
+    font-weight: 600;
+}
+
+.tipsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tipsList li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-family: "Nunito", serif;
+    display: flex;
+    align-items: center;
+}
+
+.tipsList li::before {
+    content: "✔";
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1.1rem;
 }

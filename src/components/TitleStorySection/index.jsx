@@ -1,5 +1,5 @@
 import styles from "./TitleStorySection.module.css";
-import newHistoryImg from "../../assets/img/new-history2.svg";
+import newHistoryImg from "../../assets/img/new-history.svg";
 import AppButton from "../AppButton";
 
 export default function TitleStorySection({ title, setTitle, nextStep }) {

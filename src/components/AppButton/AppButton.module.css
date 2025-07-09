@@ -5,7 +5,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 4px;
     font-family: "Nunito", serif;
 }
@@ -39,4 +39,8 @@
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.totalWidth {
+    width: 100%;
 }

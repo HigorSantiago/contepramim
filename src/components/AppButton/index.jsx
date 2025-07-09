@@ -8,6 +8,7 @@ export default function AppButton({
     variant = "primary",
     size = "medium",
     disabled = false,
+    fullWidht = false,
     className = "",
     ...props
 }) {
@@ -16,6 +17,7 @@ export default function AppButton({
         styles[variant],
         styles[size],
         disabled ? styles.disabled : '',
+        fullWidht ? styles.totalWidth : '',
         className
     ].filter(Boolean).join(' ');
 

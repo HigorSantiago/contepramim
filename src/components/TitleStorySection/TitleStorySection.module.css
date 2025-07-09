@@ -58,27 +58,6 @@
     margin-bottom: 40px;
 }
 
-.button {
-    background-color: #1656c1;
-    color: #fff;
-    border: none;
-    border-radius: 400px;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-family: "Nunito", serif;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #206EFF;
-}
-
-.secondaryButton {
-    background-color: #fff;
-    color: #206EFF;
-    border: 1px solid #206EFF;
-}
-
 .image {
     width: 80%;
     margin: 0 auto;
