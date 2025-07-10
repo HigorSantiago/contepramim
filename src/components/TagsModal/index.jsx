@@ -4,7 +4,7 @@ import { IoIosClose } from "react-icons/io";
 
 
 import { useEffect, useState } from 'react';
-import { db } from "../../db/Firebase";
+import { db } from "../../db/firebaseConfig";
 import { onValue, ref } from "firebase/database";
 
 export default function TagsModal({ onConfirm, onClose }) {

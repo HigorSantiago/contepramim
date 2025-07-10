@@ -5,13 +5,14 @@ import { getDatabase } from "firebase/database";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_FIREBASE_API_KEY)
 const firebaseConfig = {
-  apiKey: "AIzaSyAudF86mgf-J0ymYcP9O6vb14nrulD8AGs",
-  authDomain: "conta-pra-mim.firebaseapp.com",
-  projectId: "conta-pra-mim",
-  storageBucket: "conta-pra-mim.firebasestorage.app",
-  messagingSenderId: "902097894299",
-  appId: "1:902097894299:web:d66bf218b970f0ce097f3e"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_API_ID
 };
 
 // Initialize Firebase

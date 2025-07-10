@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TitleStorySection from "../components/TitleStorySection";
 import ContentStorySection from "../components/ContentStorySection";
 import TagsModal from "../components/TagsModal";
-import { db } from "../db/Firebase";
+import { db } from "../db/firebaseConfig";
 import { push, ref, set } from "firebase/database";
 
 export default function AddStoryPage() {
