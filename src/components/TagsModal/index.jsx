@@ -1,4 +1,7 @@
-import "./TagsModal.css";
+import styles from "./TagsModal.module.css";
+import AppButton from "../AppButton";
+import { IoIosClose } from "react-icons/io";
+
 
 import { useEffect, useState } from 'react';
 import { db } from "../../db/Firebase";
@@ -48,26 +51,35 @@ export default function TagsModal({ onConfirm, onClose }) {
     }
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-content">
-                <h2 className="modal-title">Selecione as Tags</h2>
-                <p className="modal-subtitle">Clique para selecionar as Tags que melhor definem sua história</p>
-                <div className="tag-container">
+
+        <div className={styles.modalOverlay}>
+            <div className={styles.modalContent}>
+                <IoIosClose size={28} onClick={onClose} className={styles.closeButton} />
+                <h2 className={styles.modalTitle}>Selecione as Tags</h2>
+                <p className={styles.modalSubtitle}>
+                    Clique para selecionar as Tags que melhor definem sua história
+                </p>
+                <div className={styles.tagContainer}>
                     {tags.map(tag => (
                         <button
                             key={tag.id}
-                            className={`tag-button ${selectedTags.includes(tag) ? 'selected' : ''}`}
+                            className={styles.tagButton}
+                            style={{
+                                backgroundColor: selectedTags.includes(tag) ? tag.colorBackground : '',
+                                color: selectedTags.includes(tag) ? tag.colorText : '',
+                            }}
                             onClick={() => toggleTag(tag)}
                         >
                             {tag.title}
                         </button>
                     ))}
                 </div>
-                <div className="modal-footer">
-                    <a href="#" className="skip-link" onClick={handleConfirm}>Pular</a>
-                    <button className="confirm-button" onClick={handleConfirm}>Pronto</button>
+                <div className={styles.modalFooter}>
+                    <AppButton variant="outline" onClick={handleConfirm} size="small">Pular</AppButton>
+                    <AppButton onClick={handleConfirm} size="small">Pronto</AppButton>
                 </div>
             </div>
-        </div>
-    )
+        </div >
+    );
+
 }

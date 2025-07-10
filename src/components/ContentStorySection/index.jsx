@@ -41,6 +41,7 @@ export default function ContentStorySection({
                         variant="secondary"
                         fullWidht
                         onClick={() => setShowModal(true)}
+                        disabled={!title.trim() || !content.trim()}
                     >
                         Finalizar História
                     </AppButton>

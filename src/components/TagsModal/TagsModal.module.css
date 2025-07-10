@@ -1,4 +1,6 @@
-.modal-overlay {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,37 +10,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
 }
 
-.modal-content {
+.modalContent {
     background: white;
     border-radius: 8px;
     padding: 24px;
     width: 400px;
-    text-align: center;
 }
 
-.modal-title {
+.modalTitle {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-.modal-subtitle {
+.modalSubtitle {
     font-size: 14px;
     color: #666;
     margin-bottom: 16px;
 }
 
-.tag-container {
+.tagContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 24px;
 }
 
-.tag-button {
+.tagButton {
     border: 1px solid #ddd;
     padding: 8px 16px;
     border-radius: 8px;
@@ -47,37 +51,23 @@
     transition: all 0.2s;
 }
 
-.tag-button:hover {
+.tagButton:hover {
     background: #f0f0f0;
 }
 
-.tag-button.selected {
+.selected {
     background: #1976d2;
     color: white;
     border-color: #1976d2;
 }
 
-.modal-footer {
+.modalFooter {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.skip-link {
-    color: #1976d2;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.confirm-button {
-    background: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 16px;
-    padding: 8px 16px;
+.closeButton {
     cursor: pointer;
-}
-
-.confirm-button:hover {
-    background: #155a9c;
+    text-align: right;
 }
