@@ -25,7 +25,7 @@ export default function TitleStorySection({ title, setTitle, nextStep }) {
                     >
                         Quero que seja este título!
                     </AppButton>
-                    <AppButton variant="outline" onClick={nextStep} size="large">
+                    <AppButton variant="primary" onClick={nextStep} size="large">
                         Sem ideias? Tudo bem, vamos começar a escrever
                     </AppButton>
                 </div>

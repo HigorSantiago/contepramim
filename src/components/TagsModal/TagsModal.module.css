@@ -20,6 +20,8 @@
     border-radius: 8px;
     padding: 24px;
     width: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .modalTitle {
@@ -69,5 +71,5 @@
 
 .closeButton {
     cursor: pointer;
-    text-align: right;
+    align-self: end;
 }
