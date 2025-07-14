@@ -1,48 +1,57 @@
-import "./HomeCards.css"
+import { useEffect, useState } from "react"
+import { getDatabase, ref, get } from "firebase/database"
 import StoryCard from "../StoryCard"
+import "./HomeCards.css"
 
 export default function HomeCards() {
-    const stories = [
-        {
-            id: 1,
-            title: "O Último Abraço",
-            content: "Ele me olhou como se soubesse que seria a última vez. Eu quis dizer tantas coisas, mas nenhuma palavra saiu. Só consegui estender a mão, e ele a segurou com força..",
-            tags: [
-                { id: 1, title: "Emocionante", color: "blue" }, 
-                { id: 5, title: "Saudade", color: "purple" },
-                { id: 3, title: "Amor", color: "red"}
-            ]
-        },
-        {
-            id: 2,
-            title: "O Vizinho Novo",
-            content: "Eu estava descendo as escadas do prédio quando o vi pela primeira vez. Ele estava carregando uma caixa e parecia perdido. Fui até ele para oferecer ajuda, e acabamos conversando por alguns minutos...",
-            tags: [
-                { id: 1, title: "Emocionante", color: "blue" }, 
-                { id: 4, title: "Amizade", color: "cyan" }
-            ]
-        },
-        {
-            id: 3,
-            title: "A entrevista que nunca aconteceu",
-            content: "Eu me preparei por semanas. Escolhi a melhor roupa, revisei todas as perguntas possíveis, ensaiei frente ao espelho. Cheguei 15 minutos antes, esperando impressionar.",
-            tags: [
-                { id: 1, title: "Emocionante", color: "blue" },
-                { id: 2, title: "Cotidano", color: "green"},
-                { id: 3, title: "Amor", color: "red"}
-            ]
-        }
-    ]
-    return (
-        <section className="cards">
-            <h1 className="montserrat-semibold">Historias Inspiradoras</h1>
-            <div className="carousel">
-                <div className="carousel-track">
-                    { stories.map(story => (
-                        <StoryCard key={story.id} story={story} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+  const [stories, setStories] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const db = getDatabase()
+    const storiesRef = ref(db, "stories")
+
+    get(storiesRef).then(snapshot => {
+      if (snapshot.exists()) {
+        const data = snapshot.val()
+
+        const loadedStories = Object.entries(data).map(([id, story]) => {
+          let tags = []
+
+          
+          if (Array.isArray(story.tags)) {
+            tags = story.tags.filter(tag => tag != null) 
+          } else if (typeof story.tags === "object") {
+            tags = Object.values(story.tags)
+          }
+
+          return {
+            id,
+            title: story.title,
+            content: story.content,
+            tags
+          }
+        })
+
+        setStories(loadedStories)
+      }
+
+      setLoading(false)
+    })
+  }, [])
+
+  return (
+    <section className="cards">
+      <h1 className="montserrat-semibold">Histórias Inspiradoras</h1>
+      <div className="carousel">
+        <div className="carousel-track">
+          {loading && <p>Carregando histórias...</p>}
+          {!loading && stories.length === 0 && <p>Nenhuma história encontrada.</p>}
+          {stories.map(story => (
+            <StoryCard key={story.id} story={story} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
