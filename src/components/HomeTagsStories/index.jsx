@@ -1,28 +1,49 @@
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { getDatabase, ref, get } from "firebase/database"
 import "./HomeTagsStories.css"
 
 export default function HomeTagsStories() {
-    const tags = [
-        {id: 1, title: "Emoção", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id libero quis tempora similique! Iste rerum eum doloribus mollitia nostrum odit aspernatur laboriosam, quam ipsa cupiditate quas maxime quaerat fugiat!", color: "blue"},
-        {id: 2, title: "Saudade", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ducimus quis itaque non nam a neque cumque corrupti tempora autem magni, ipsum aspernatur modi adipisci fugiat assumenda. Numquam, veritatis illo.", color: "purple"},
-        {id: 3, title: "Tempos de Escola", description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus labore animi, incidunt a voluptatum obcaecati pariatur voluptates qui quam possimus quibusdam odit necessitatibus saepe autem blanditiis dolor. Eum, earum temporibus?", color: "green"},
-    ]
+    const [tags, setTags] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const db = getDatabase()
+        const tagsRef = ref(db, "tags")
+
+        get(tagsRef).then(snapshot => {
+            if (snapshot.exists()) {
+                const data = snapshot.val()
+                const loadedTags = Object.entries(data).map(([id, tag]) => ({
+                    id,
+                    title: tag.title,
+                    description: tag.description,
+                    color: tag.colorText
+                }))
+                setTags(loadedTags)
+            }
+            setLoading(false)
+        })
+    }, [])
+
     return (
         <section className="historys">
             <h1 className="montserrat-semibold">Aqui, cada história encontra seu lugar e sua voz.</h1>
             <ul className="history-list">
+                {loading && <p>Carregando categorias...</p>}
                 {tags.map(tag => (
                     <li key={tag.id} className="history-item">
                         <img src="/img/icons/heart.svg" alt="" />
                         <div className="history-text">
-                            <h2 className={`montserrat-semibold ${tag.color}`}>{tag.title}</h2>
+                            <h2 className={`montserrat-semibold`} style={{ color: tag.color }}>{tag.title}</h2>
                             <p className="montserrat-medium">{tag.description}</p>
                         </div>
-                        <a href="/" className={`ver-mais ${tag.color} montserrat-medium`}>
-                            Clique para ver mais                    
-                        </a>
+                        <Link to={`/tag/${tag.id}/stories`} className={`ver-mais montserrat-medium`} style={{ color: tag.color }}>
+                            Clique para ver mais
+                        </Link>
                     </li>
                 ))}
-                
+
             </ul>
         </section>
     )
