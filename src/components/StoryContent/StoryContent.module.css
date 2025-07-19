@@ -1,7 +1,13 @@
 .container {
-    padding: 64px;
+    padding: 32px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.storyContent {
+    display: flex;
+    gap: 52px;
+    padding: 64px;
 }
 
 .content {
@@ -65,7 +71,7 @@
     .container {
         padding: 24px;
     }
-    
+
     .content {
         padding: 24px;
     }
