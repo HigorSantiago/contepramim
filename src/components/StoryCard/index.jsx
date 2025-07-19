@@ -18,7 +18,7 @@ export default function StoryCard({ story }) {
             story.tags.map((tag, index) => (
               <span
                 key={index}
-                className="tags-structure"
+                className={styles.tag}
                 style={{
                   backgroundColor: tag.colorBackground,
                   color: tag.colorText
@@ -30,7 +30,7 @@ export default function StoryCard({ story }) {
             ))}
         </div>
 
-        <p className="montserrat-medium autor">De pessoa anônima</p>
+        <p className={styles.author}>De pessoa anônima</p>
       </div>
     </Link>
   )
