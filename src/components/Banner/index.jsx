@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom"
-import "./Banner.css"
+import styles from "./Banner.module.css"
+import AppButton from "../AppButton"
 
 export default function Banner() {
     return (
-        <section className="banner">
-            <div className="banner-content">
-                <div>
-                    <h1 className="montserrat-semibold">Conte sua historia</h1>
-                    <p className="nunito-regular">Um espaço acolhedor para suas historias</p>
+        <section className={styles.banner}>
+            <div className={styles.content}>
+                <div className={styles.textContent}>
+                    <h1 className={styles.title}>Conte sua historia</h1>
+                    <p className={styles.description}>Um espaço acolhedor para suas historias</p>
                 </div>
 
-                <div>
-                    <ul className="banner-content-buttons">
-                        <Link to="/" className="button-secundary-outline montserrat-medium">Quero Desabafar</Link>
-                        <Link to="/" className="button-secundary-outline montserrat-medium">Quero falar sobre o meu dia a
-                            dia</Link>
-                        <Link to="/" className="button-secundary-outline montserrat-medium">Quero ver outras historias</Link>
-                    </ul>
+                <div className={styles.buttonContainer}>
+                    <Link to="/">
+                        <AppButton variant="outline-border">Quero Desabafar</AppButton>
+                    </Link>
+                    <Link to="/">
+                        <AppButton variant="outline-border">Quero falar sobre o meu dia a dia</AppButton>
+                    </Link>
+                    <Link to="/">
+                        <AppButton variant="outline-border">Quero ver outras historias</AppButton>
+                    </Link>
+
                 </div>
 
             </div>

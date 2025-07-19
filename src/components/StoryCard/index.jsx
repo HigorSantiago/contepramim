@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom"
-import "./StoryCard.css"
+import styles from "./StoryCard.module.css"
 
 export default function StoryCard({ story }) {
   return (
-    <Link to={`/story/${story.id}`}>
-      <div className="card">
-        <h2 className="montserrat-semibold">{story.title}</h2>
+    <Link to={`/story/${story.id}`} className={styles.link}>
+      <div className={styles.card}>
+        <h2 className={styles.title}>{story.title}</h2>
 
-        <p className="nunito-regular">
+        <p className={styles.content}>
           {story.content.length > 150
             ? story.content.slice(0, 150) + "..."
             : story.content}
         </p>
 
-        <div className="tags montserrat-semibold">
+        <div className={styles.tags}>
           {story.tags &&
             story.tags.map((tag, index) => (
               <span
