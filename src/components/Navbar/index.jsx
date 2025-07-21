@@ -16,18 +16,16 @@ export default function Navbar() {
                         <li className={styles.menuItem}>
                             <Link to="/" className={styles.menuLink}>Tipos de Historia</Link>
                         </li>
+                        
                         <li className={styles.menuItem}>
-                            <Link to="/" className={styles.menuLink}>Historias da Semana</Link>
-                        </li>
-                        <li className={styles.menuItem}>
-                            <Link to="/" className={styles.menuLink}>Preciso de Ajuda</Link>
+                            <Link to="/need-help" className={styles.menuLink}>Preciso de Ajuda</Link>
                         </li>
                     </ul>
                 </nav>
             </div>
 
-            <AppButton to="/add-story" variant="primary" className="montserrant-regular">
-                <IoIosAddCircleOutline size={24} /> Conte uma História
+            <AppButton to="/add-story" variant="primary" className="montserrat-semibold">
+                <IoIosAddCircleOutline size={20} /> Conte uma História
             </AppButton>
         </header>
     )
