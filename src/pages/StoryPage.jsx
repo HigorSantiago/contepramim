@@ -16,7 +16,6 @@ export default function StoryPage() {
       if (snapshot.exists()) {
         const data = snapshot.val()
 
-        // Se tags não for array, converte pra array com 1 elemento
         const tags = Array.isArray(data.tags) ? data.tags : [data.tags]
 
         setStory({
