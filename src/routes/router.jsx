@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout";
 import AddStoryPage from "../pages/AddStoryPage";
 import StoryPage from "../pages/StoryPage";
 import NeedHelpPage from "../pages/NeedHelpPage";
+import StoryTypes from "../pages/StoryTypes";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -12,6 +13,7 @@ const router = createBrowserRouter(
             <Route path="/add-story" element={<AddStoryPage />} />
             <Route path="/story/:id" element={<StoryPage />} />
             <Route path="/need-help" element={<NeedHelpPage />} />
+            <Route path="/story-types" element={<StoryTypes />} />
         </Route>
     )
 )

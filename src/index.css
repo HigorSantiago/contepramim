@@ -15,6 +15,9 @@
 
 * {
     box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
 }
 
 input[type="text"]:focus {

@@ -14,9 +14,9 @@ export default function Navbar() {
                 <nav>
                     <ul className={styles.menu}>
                         <li className={styles.menuItem}>
-                            <Link to="/" className={styles.menuLink}>Tipos de Historia</Link>
+                            <Link to="/story-types" className={styles.menuLink}>Tipos de Historia</Link>
                         </li>
-                        
+
                         <li className={styles.menuItem}>
                             <Link to="/need-help" className={styles.menuLink}>Preciso de Ajuda</Link>
                         </li>

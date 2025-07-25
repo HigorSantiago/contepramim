@@ -1,0 +1,35 @@
+.container {
+
+    margin: 42px 64px;
+    padding: 0;
+}
+
+
+.backLink {
+    color: #1a73e8;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-family: "Nunito", serif;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    font-family: "Montserrat", serif;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.tag {
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+}
