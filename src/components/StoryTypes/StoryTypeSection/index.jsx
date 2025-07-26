@@ -4,7 +4,7 @@ import styles from './StoryTypeSection.module.css'
 export default function StoryTypeSection({ tag, stories }) {
     return (
         <>
-            <section className={styles.container}>
+            <section className={styles.storyType}>
                 <h1 className={styles.title}>Tipos de História <span
                     className={styles.tag}
                     style={{
@@ -16,11 +16,14 @@ export default function StoryTypeSection({ tag, stories }) {
                     {tag.title}
                 </span></h1>
                 <div className={styles.cardsGrid}>
-                    {stories.map(story => (
-                        <StoryCard key={story.id} story={story} />
-                    ))}
+                    {stories.length === 0 ? (
+                        <p>Nenhuma História Encontada</p>
+                    ) : (
+                        stories.map(story => (
+                            <StoryCard key={story.id} story={story} />
+                        ))
+                    )}
                 </div>
-
             </section>
         </>
     )

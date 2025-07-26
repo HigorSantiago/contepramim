@@ -72,11 +72,18 @@ export default function StoryTypes() {
 
     return (
         <>
-            <a href="/" >Voltar para o Menu Principal</a>
-            {Object.entries(groupedStories).map(([tagTitle, { tag, stories }]) => (
-                <StoryTypeSection key={tagTitle} tag={tag} stories={stories} />
-            ))}
-
+            <div className="container" style={{ margin: "42px 64px", padding: 0 }}>
+                <a href="/" className="backLink">Voltar para o Menu Principal</a>
+                {loading ? (
+                    <p>Carregando Histórias...</p>
+                ) : groupedStories.length === 0 ? (
+                    <p>Nenhuma História Encontrada.</p>
+                ) : (
+                    Object.entries(groupedStories).map(([tagTitle, { tag, stories }]) => (
+                        <StoryTypeSection key={tagTitle} tag={tag} stories={stories} />
+                    ))
+                )}
+            </div>
         </>
     )
 }
