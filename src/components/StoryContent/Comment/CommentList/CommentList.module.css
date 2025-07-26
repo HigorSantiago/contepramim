@@ -1,9 +1,0 @@
-.commentList {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.commentListTitle {
-    font-size: 16px;
-}
