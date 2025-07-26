@@ -75,8 +75,7 @@ export default function TagsModal({ onConfirm, onClose }) {
                     ))}
                 </div>
                 <div className={styles.modalFooter}>
-                    <AppButton variant="outline" onClick={handleConfirm} size="small">Pular</AppButton>
-                    <AppButton onClick={handleConfirm} size="small">Pronto</AppButton>
+                    <AppButton disabled={selectedTags.length === 0} onClick={handleConfirm} size="small">Pronto</AppButton>
                 </div>
             </div>
         </div >
