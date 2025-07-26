@@ -45,7 +45,7 @@ export default function HomeCards() {
     <section className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.title}>Histórias Inspiradoras</h1>
-        <AppButton variant="outline">Ver Mais</AppButton>
+        <AppButton to={`/stories`} variant="outline">Ver Mais</AppButton>
       </div>
       <div className={styles.carouselContainer}>
         {loading ? (

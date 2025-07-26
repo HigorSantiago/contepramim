@@ -14,7 +14,7 @@ export default function Navbar() {
                 <nav>
                     <ul className={styles.menu}>
                         <li className={styles.menuItem}>
-                            <Link to="/stories" className={styles.menuLink}>Tipos de Historia</Link>
+                            <Link to="/stories" className={styles.menuLink}>Tipos de História</Link>
                         </li>
 
                         <li className={styles.menuItem}>
