@@ -30,8 +30,13 @@ export default function StoryPage() {
     })
   }, [id])
 
-  if (loading) return <p>Carregando história...</p>
-  if (!story) return <p>História não encontrada.</p>
-
-  return <StoryContent story={story} />
+  return (
+    loading ? (
+      <p>Carregando História</p>
+    ) : !story ? (
+      <p>História não encontrada</p>
+    ) : (
+      <StoryContent story={story} />
+    )
+  )
 }

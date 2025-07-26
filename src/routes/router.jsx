@@ -13,7 +13,7 @@ const router = createBrowserRouter(
             <Route path="/add-story" element={<AddStoryPage />} />
             <Route path="/story/:id" element={<StoryPage />} />
             <Route path="/need-help" element={<NeedHelpPage />} />
-            <Route path="/story-types" element={<StoryTypes />} />
+            <Route path="/stories" element={<StoryTypes />} />
         </Route>
     )
 )

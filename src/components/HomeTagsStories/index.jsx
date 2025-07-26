@@ -38,7 +38,7 @@ export default function HomeTagsStories() {
                             <h2 className={`montserrat-semibold`} style={{ color: tag.color }}>{tag.title}</h2>
                             <p className="montserrat-medium">{tag.description}</p>
                         </div>
-                        <Link to={`/tag/${tag.id}/stories`} className={`ver-mais montserrat-medium`} style={{ color: tag.color }}>
+                        <Link to={`stories?tagId=${tag.id}`} className={`ver-mais montserrat-medium`} style={{ color: tag.color }}>
                             Clique para ver mais
                         </Link>
                     </li>
