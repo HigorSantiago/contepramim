@@ -9,7 +9,7 @@ export default function StoryCard({ story }) {
 
         <p className={styles.content}>
           {story.content.length > 150
-            ? story.content.slice(0, 150) + "..."
+            ? story.content.slice(0, 75) + "..."
             : story.content}
         </p>
 
