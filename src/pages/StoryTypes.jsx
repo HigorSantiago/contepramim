@@ -22,13 +22,9 @@ export default function StoryTypes() {
                 const storiesData = storiesSnap.val()
 
                 Object.entries(storiesData).forEach(([id, story]) => {
-                    let tags = []
-
-                    if (Array.isArray(story.tags)) {
-                        tags = story.tags.filter((tag) => tag != null)
-                    } else if (typeof story.tags === "object") {
-                        tags = Object.values(story.tags)
-                    }
+                    const tags = Array.isArray(story.tags)
+                        ? story.tags.filter((tag) => tag != null)
+                        : []
 
                     loadedStories.push({
                         id,
